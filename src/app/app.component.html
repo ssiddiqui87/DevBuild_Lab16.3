@@ -319,13 +319,22 @@
             <button (click)="completeTask(t)" class="taskButton">
               Complete
             </button>
-            {{ t.taskTitle }}
+            <span class="taskNumber"> Task {{i+1}}:</span> {{ t.taskTitle }}
           </span>
 
-          <span *ngIf="t.completed == true" class="taskComplete">
-            {{ t.taskTitle }}
-            <button (click)="deleteTask(t, i)" class="taskButtonDelete">
+          <div *ngIf="!hideEditBox">
+            <input type="text" [(ngModel)]="editInput" />
+  
+            <button (click)="editTask(t)" class="addTask">
+              Save changes
+            </button>
+          </div>
+          <span class="taskNumber" *ngIf="t.completed == true"> Task {{i+1}}:</span> 
+          <span *ngIf="t.completed == true" class="taskComplete">{{ t.taskTitle }}<button (click)="deleteTask(t, i)" class="taskButtonDelete">
               Delete
+            </button>
+            <button (click)="completeTask(t)" class="taskButtonDelete">
+              Re-open
             </button>
           </span>
         </td>
@@ -333,6 +342,7 @@
       </tr>
 
     </div>
+    
     <tr>
       <td>
         <input type="text" [(ngModel)]="userInput" />
@@ -340,11 +350,18 @@
         <button (click)="addTask()" class="addTask">
           Add
         </button>
+
       </td>
     </tr>
+
     <button class="showComplete" (click)="toggleCompletedTasks()">
       {{ hideCompletedTasks ? 'show completed tasks' : 'hide completed tasks' }}
     </button>
+    &nbsp;
+    <button class="showComplete" (click)="toggleEditBox()">
+      {{ hideEditBox ? 'Edit' : 'Done Editing' }}
+    </button>
+    
   </table>
 </div>
   <footer>

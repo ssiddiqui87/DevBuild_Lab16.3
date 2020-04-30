@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Lab 16.3: Angular Todo';
 
   userInput:string;
+  editInput:string;
 
   tasks:Task[] = [
     {taskTitle: "Play video games", completed: false},
@@ -24,11 +25,15 @@ export class AppComponent {
     this.tasks.push({taskTitle:this.userInput, completed: false});
   }
 
+  editTask = function(task:Task){
+
+    task.taskTitle = this.editInput;
+  }
   completeTask = function(task:Task) {
-    task.completed = true;
+    task.completed = !task.completed;
   }
 
-  deleteTask = function(task:Task, index){
+  deleteTask = function(task:Task, index:number){
     this.tasks.splice(index, 1);
   }
 
@@ -36,5 +41,11 @@ export class AppComponent {
 
   toggleCompletedTasks = () => {
     this.hideCompletedTasks = !this.hideCompletedTasks;
+  }
+
+  hideEditBox:boolean = true;
+
+  toggleEditBox = () => {
+    this.hideEditBox = !this.hideEditBox;
   }
 }
