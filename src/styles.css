@@ -1,1 +1,111 @@
 /* You can add global styles to this file, and also import other style files */
+
+input[type=text] {
+    border: 2px solid rgb(0, 162, 255);
+    border-radius: 4px;
+    height: 20px;
+    width: 300px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.taskButton {
+    background-color: rgb(0, 162, 255);
+    /* Green */
+    border: none;
+    color: white;
+    padding: 4px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.taskButtonDelete {
+    background-color: rgb(211, 6, 6);
+    /* Green */
+    border: none;
+    color: white;
+    padding: 4px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.taskComplete {
+    color: rgb(148, 7, 7);
+    text-decoration: line-through;
+}
+
+input[type=text]:focus {
+    background-color: rgb(235, 235, 235);
+}
+
+.task {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    background-color: rgb(235, 235, 235);
+    padding: 20px 10px;
+    border-radius: 5px;
+    
+}
+
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,82,121,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+h1 {
+    color: rgb(0, 162, 255);
+    text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white;
+}
+
+.showComplete {
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.showComplete:hover {
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+}
+.showComplete:active {
+	position:relative;
+	top:1px;
+}
+
+.addTask {
+	box-shadow: 0px 10px 14px -7px #3e7327;
+	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:4px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+.addTask:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color:#72b352;
+}
+.addTask:active {
+	position:relative;
+	top:1px;
+}

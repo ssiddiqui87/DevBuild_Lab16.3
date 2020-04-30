@@ -32,4 +32,9 @@ export class AppComponent {
     this.tasks.splice(index, 1);
   }
 
+  hideCompletedTasks:boolean = false;
+
+  toggleCompletedTasks = () => {
+    this.hideCompletedTasks = !this.hideCompletedTasks;
+  }
 }
