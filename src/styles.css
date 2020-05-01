@@ -1,4 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,82,121,1) 0%, rgba(0,212,255,1) 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
 input[type=text] {
     border: 2px solid rgb(0, 162, 255);
     border-radius: 4px;
@@ -17,6 +27,15 @@ input[type=text]:focus {
     border-radius: 4px;
     height: 15px;
     width: 200px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.searchInputBox[type=text] {
+    border: 2px solid #8f2929;
+    border-radius: 4px;
+    height: 20px;
+    width: 300px;
     margin-right: 10px;
     padding: 5px;
 }
@@ -43,6 +62,31 @@ input[type=text]:focus {
     display: inline-block;
     font-size: 12px;
     margin-left: 5px;
+}
+
+.reopenButton {
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+	background-color:#ffc477;
+	border-radius:6px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bold;
+	padding:4px 18px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc9f52;
+}
+.reopenButton:hover {
+	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	background-color:#fb9e25;
+}
+.reopenButton:active {
+	position:relative;
+	top:1px;
 }
 
 .taskComplete {
@@ -133,9 +177,6 @@ input[type=text]:focus {
     
 }
 
-body {
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,82,121,1) 0%, rgba(0,212,255,1) 100%);
-}
 
 h1 {
     color: rgb(0, 162, 255);
