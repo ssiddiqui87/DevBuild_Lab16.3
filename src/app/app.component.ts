@@ -11,24 +11,33 @@ export class AppComponent {
 
   userInput:string;
   editInput:string;
+  hideCompletedTasks:boolean = false;
+  taskFilterText = '';
 
   tasks:Task[] = [
-    {taskTitle: "Play video games", completed: false},
-    {taskTitle: "Work on lab", completed: false},
-    {taskTitle: "Take a nap", completed: true},
-    {taskTitle: "procrastinate working on lab", completed: true},
-    {taskTitle: "Eat Dinner", completed: false},
-    {taskTitle: "Buy cat food", completed: false}
+    {taskTitle: "Play video games", completed: false, edit: false},
+    {taskTitle: "Work on lab", completed: false, edit: false},
+    {taskTitle: "Take a nap", completed: true, edit: false},
+    {taskTitle: "procrastinate working on lab", completed: true, edit: false},
+    {taskTitle: "Eat Dinner", completed: false, edit: false},
+    {taskTitle: "Buy cat food", completed: false, edit: false}
   ]
 
   addTask = function(){
     this.tasks.push({taskTitle:this.userInput, completed: false});
+    this.userInput = "";
   }
 
   editTask = function(task:Task){
 
     task.taskTitle = this.editInput;
+    this.editInput = "";
   }
+
+  toggleEdit = function():boolean {
+    return true;
+  }
+
   completeTask = function(task:Task) {
     task.completed = !task.completed;
   }
@@ -37,15 +46,12 @@ export class AppComponent {
     this.tasks.splice(index, 1);
   }
 
-  hideCompletedTasks:boolean = false;
 
-  toggleCompletedTasks = () => {
+  toggleCompletedTasks = function() {
     this.hideCompletedTasks = !this.hideCompletedTasks;
   }
 
-  hideEditBox:boolean = true;
-
-  toggleEditBox = () => {
-    this.hideEditBox = !this.hideEditBox;
-  }
+  tasksRemaining = function():number{
+    return this.tasks.filter((task: { completed: any; }) => !task.completed).length;
+}
 }
