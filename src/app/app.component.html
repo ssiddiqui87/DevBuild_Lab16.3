@@ -11,6 +11,7 @@
           </div>
         </td>
       </tr>
+
       <div *ngFor="let i = index; let t of tasks | filter : searchText" [hidden]="t.completed && hideCompletedTasks">
         <tr>
           <td *ngIf="t.completed == false">
@@ -18,42 +19,49 @@
               Complete
             </button>
           </td>
-          <td *ngIf="t.completed == false" class="taskNumber">Task {{i+1}}:
-          </td>
-          <td *ngIf="t.completed == false">
-            {{ t.taskTitle }}
-          </td>
+
+          <td *ngIf="t.completed == false" class="taskNumber">Task {{i+1}}: </td>
+
+          <td *ngIf="t.completed == false">{{ t.taskTitle }}</td>
+
           <td>
             <span class="taskNumber" *ngIf="t.completed == true">
               Task {{i+1}}:
             </span>
           </td>
+
           <td *ngIf="t.completed == true" class="taskComplete">
             {{ t.taskTitle }}
           </td>
+
           <td>
             <button (click)="deleteTask(t, i)" class="deleteButton">
               Delete
             </button>
           </td>
+
           <td *ngIf="t.completed == true">
             <button (click)="completeTask(t)" class="reopenButton">
               Re-open
             </button>
           </td>
-          <td [hidden]="t.edit">
-            <button *ngIf="t.edit==false" (click)="t.edit = toggleEdit()" class="editButton">
+
+          <td>
+            <button (click)="t.edit = toggleEdit()" class="editButton">
               Edit
             </button>
           </td>
+
           <td [hidden]="!t.edit">
             <input type="text" [(ngModel)]="editInput" class="editInputBox" placeholder="Edit your task" />
           </td>
+
           <td [hidden]="!t.edit">
             <button *ngIf="t.edit" (click)="editTask(t);t.edit = !toggleEdit()" class="addTask">
               Save changes
             </button>
           </td>
+
         </tr>
       </div>
       <tr>
@@ -64,10 +72,11 @@
           </button>
         </td>
       </tr>
+
       <button class="showComplete" (click)="toggleCompletedTasks()">
-        {{ hideCompletedTasks ? 'show completed tasks' : 'hide completed tasks' }}
+        {{ hideCompletedTasks ? 'Show all tasks' : 'Hide completed tasks' }}
       </button>
-      &nbsp;
+
     </table>
   </div>
 
