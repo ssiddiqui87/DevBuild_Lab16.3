@@ -9,49 +9,66 @@ import { Task } from './interfaces/task';
 export class AppComponent {
   title = 'Lab 16.3: Angular Todo';
 
-  userInput:string;
-  editInput:string;
-  hideCompletedTasks:boolean = false;
+  userInput: string;
+  editInput: string;
+  searchInput: string;
+  hideCompletedTasks: boolean = false;
   taskFilterText = '';
-
-  tasks:Task[] = [
-    {taskTitle: "Play video games", completed: false, edit: false},
-    {taskTitle: "Work on lab", completed: false, edit: false},
-    {taskTitle: "Take a nap", completed: true, edit: false},
-    {taskTitle: "procrastinate working on lab", completed: true, edit: false},
-    {taskTitle: "Eat Dinner", completed: false, edit: false},
-    {taskTitle: "Buy cat food", completed: false, edit: false}
+searchText:string;
+  tasks: Task[] = [
+    { taskTitle: "Play video games", completed: false, edit: false },
+    { taskTitle: "Work on lab", completed: false, edit: false },
+    { taskTitle: "Take a nap", completed: true, edit: false },
+    { taskTitle: "procrastinate working on lab", completed: true, edit: false },
+    { taskTitle: "Eat Dinner", completed: false, edit: false },
+    { taskTitle: "Buy cat food", completed: false, edit: false }
   ]
-
-  addTask = function(){
-    this.tasks.push({taskTitle:this.userInput, completed: false});
+ tasksCopy;
+  addTask = function () {
+    this.tasks.push({ taskTitle: this.userInput, completed: false });
     this.userInput = "";
   }
 
-  editTask = function(task:Task){
+  editTask = function (task: Task) {
 
     task.taskTitle = this.editInput;
     this.editInput = "";
   }
 
-  toggleEdit = function():boolean {
+  toggleEdit = function (): boolean {
     return true;
   }
 
-  completeTask = function(task:Task) {
+  completeTask = function (task: Task) {
     task.completed = !task.completed;
   }
 
-  deleteTask = function(task:Task, index:number){
+  deleteTask = function (task: Task, index: number) {
     this.tasks.splice(index, 1);
   }
 
 
-  toggleCompletedTasks = function() {
+  toggleCompletedTasks = function () {
     this.hideCompletedTasks = !this.hideCompletedTasks;
   }
 
-  tasksRemaining = function():number{
+  tasksRemaining = function (): number {
     return this.tasks.filter((task: { completed: any; }) => !task.completed).length;
-}
+  }
+
+  searchTask = function (): Task {
+    this.tasks = this.taskArray.filter((tasks: { task: any; }) => !tasks.task.toLower().contains(this.searchInput.toLower()));
+
+    return this.tasks;
+  }
+  characters = [
+    'Finn the human',
+    'Jake the dog',
+    'Princess bubblegum',
+    'Lumpy Space Princess',
+    'Beemo1',
+    'Beemo2'
+  ]
+
+
 }
