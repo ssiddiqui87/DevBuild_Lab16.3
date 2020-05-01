@@ -11,10 +11,9 @@ export class AppComponent {
 
   userInput: string;
   editInput: string;
-  searchInput: string;
   hideCompletedTasks: boolean = false;
   taskFilterText = '';
-searchText:string;
+  searchText: string;
   tasks: Task[] = [
     { taskTitle: "Play video games", completed: false, edit: false },
     { taskTitle: "Work on lab", completed: false, edit: false },
@@ -23,7 +22,7 @@ searchText:string;
     { taskTitle: "Eat Dinner", completed: false, edit: false },
     { taskTitle: "Buy cat food", completed: false, edit: false }
   ]
- tasksCopy;
+  tasksCopy;
   addTask = function () {
     this.tasks.push({ taskTitle: this.userInput, completed: false });
     this.userInput = "";
@@ -61,14 +60,5 @@ searchText:string;
 
     return this.tasks;
   }
-  characters = [
-    'Finn the human',
-    'Jake the dog',
-    'Princess bubblegum',
-    'Lumpy Space Princess',
-    'Beemo1',
-    'Beemo2'
-  ]
-
 
 }

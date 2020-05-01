@@ -78,7 +78,8 @@ input[type=text]:focus {
 	font-weight:bold;
 	padding:4px 18px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #cc9f52;
+    text-shadow:0px 1px 0px #cc9f52;
+    margin: 0 5px 0 2px;
 }
 .reopenButton:hover {
 	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
@@ -94,7 +95,7 @@ input[type=text]:focus {
     text-decoration: line-through;
 }
 
-.markComplete {
+.editButton {
 	box-shadow:inset 0px 1px 0px 0px #f0f7fa;
 	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
 	background-color:#33bdef;
@@ -108,13 +109,14 @@ input[type=text]:focus {
 	font-weight:bold;
 	padding:4px 18px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #5b6178;
+    text-shadow:0px 1px 0px #5b6178;
+    margin: 3px;
 }
-.markComplete:hover {
+.editButton:hover {
 	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
 	background-color:#019ad2;
 }
-.markComplete:active {
+.editButton:active {
 	position:relative;
 	top:1px;
 }
@@ -133,7 +135,7 @@ input[type=text]:focus {
 	font-weight:bold;
 	padding:4px 18px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #810e05;
+    text-shadow:0px 1px 0px #810e05;
 }
 .deleteButton:hover {
 	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
@@ -144,7 +146,7 @@ input[type=text]:focus {
 	top:1px;
 }
 
-.editButton {
+.markComplete {
 	box-shadow:inset 0px 1px 0px 0px #a4e271;
 	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
 	background-color:#89c403;
@@ -158,13 +160,14 @@ input[type=text]:focus {
 	font-weight:bold;
 	padding:4px 18px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #528009;
+    text-shadow:0px 1px 0px #528009;
+    margin: 3px;
 }
-.editButton:hover {
+.markComplete:hover {
 	background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
 	background-color:#77a809;
 }
-.editButton:active {
+.markComplete:active {
 	position:relative;
 	top:1px;
 }
@@ -197,7 +200,8 @@ h1 {
 	font-weight:bold;
 	padding:8px 15px;
 	text-decoration:none;
-	text-shadow:0px -1px 0px #2b665e;
+    text-shadow:0px -1px 0px #2b665e;
+    margin-top:10px;
 }
 .showComplete:hover {
 	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
@@ -206,6 +210,10 @@ h1 {
 .showComplete:active {
 	position:relative;
 	top:1px;
+}
+
+.buttonAlign {
+    text-align:right;
 }
 
 .addTask {
@@ -222,7 +230,8 @@ h1 {
 	font-weight:bold;
 	padding:6px 12px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #5b8a3c;
+    text-shadow:0px 1px 0px #5b8a3c;
+    margin-right:4px
 }
 .addTask:hover {
 	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
@@ -524,3 +533,4 @@ h1 {
       visibility: hidden;
     }
   }
+

@@ -14,15 +14,11 @@
 
       <div *ngFor="let i = index; let t of tasks | filter : searchText" [hidden]="t.completed && hideCompletedTasks">
         <tr>
-          <td *ngIf="t.completed == false">
-            <button (click)="completeTask(t)" class="markComplete">
-              Complete
-            </button>
-          </td>
+
 
           <td *ngIf="t.completed == false" class="taskNumber">Task {{i+1}}: </td>
 
-          <td *ngIf="t.completed == false">{{ t.taskTitle }}</td>
+          <td *ngIf="t.completed == false" width="325px">{{ t.taskTitle }}</td>
 
           <td>
             <span class="taskNumber" *ngIf="t.completed == true">
@@ -30,35 +26,43 @@
             </span>
           </td>
 
-          <td *ngIf="t.completed == true" class="taskComplete">
+          <td *ngIf="t.completed == true" class="taskComplete" width="330px">
             {{ t.taskTitle }}
           </td>
 
-          <td>
+          <td class="buttonAlign">
+
+            <button *ngIf="t.completed == false" (click)="completeTask(t)" class="markComplete">
+              Complete
+            </button>
+            <button *ngIf="t.completed == true" (click)="completeTask(t)" class="reopenButton">
+              Re-open
+            </button>
             <button (click)="deleteTask(t, i)" class="deleteButton">
               Delete
             </button>
-          </td>
 
-          <td *ngIf="t.completed == true">
-            <button (click)="completeTask(t)" class="reopenButton">
-              Re-open
-            </button>
-          </td>
 
-          <td>
             <button (click)="t.edit = toggleEdit()" class="editButton">
               Edit
             </button>
           </td>
-
-          <td [hidden]="!t.edit">
-            <input type="text" [(ngModel)]="editInput" class="editInputBox" placeholder="Edit your task" />
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input [hidden]="!t.edit" type="text" [(ngModel)]="editInput" class="editInputBox" placeholder="Edit your task" style="margin:0" />
           </td>
-
-          <td [hidden]="!t.edit">
-            <button *ngIf="t.edit" (click)="editTask(t);t.edit = !toggleEdit()" class="addTask">
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <button [hidden]="!t.edit" *ngIf="t.edit" (click)="editTask(t);t.edit = !toggleEdit()" class="addTask">
               Save changes
+            </button>
+
+            <button *ngIf="t.edit" (click)="t.edit = toggleEdit()" class="addTask">
+              Cancel
             </button>
           </td>
 
