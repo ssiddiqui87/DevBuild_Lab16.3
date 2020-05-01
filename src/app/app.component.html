@@ -14,18 +14,13 @@
 
       <div *ngFor="let i = index; let t of tasks | filter : searchText" [hidden]="t.completed && hideCompletedTasks">
         <tr>
-
-
           <td *ngIf="t.completed == false" class="taskNumber">Task {{i+1}}: </td>
-
           <td *ngIf="t.completed == false" width="325px">{{ t.taskTitle }}</td>
-
           <td>
             <span class="taskNumber" *ngIf="t.completed == true">
               Task {{i+1}}:
             </span>
           </td>
-
           <td *ngIf="t.completed == true" class="taskComplete" width="330px">
             {{ t.taskTitle }}
           </td>
@@ -38,14 +33,14 @@
             <button *ngIf="t.completed == true" (click)="completeTask(t)" class="reopenButton">
               Re-open
             </button>
-            <button (click)="deleteTask(t, i)" class="deleteButton">
-              Delete
-            </button>
-
 
             <button (click)="t.edit = toggleEdit()" class="editButton">
               Edit
             </button>
+            <button (click)="deleteTask(t, i)" class="deleteButton">
+              Delete
+            </button>
+
           </td>
         </tr>
         <tr>
