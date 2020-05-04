@@ -55,10 +55,8 @@ export class AppComponent {
     return this.tasks.filter((task: { completed: any; }) => !task.completed).length;
   }
 
-  searchTask = function (): Task {
-    this.tasks = this.taskArray.filter((tasks: { task: any; }) => !tasks.task.toLower().contains(this.searchInput.toLower()));
-
-    return this.tasks;
-  }
+  // taskSearch = function(search:string):boolean{
+  //   return search.toLowerCase().includes(this.taskSearch.toLowerCase());
+  // }
 
 }
